@@ -124,7 +124,7 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (input.value) {
-          const messageData = { id: clientId, msg: input.value };
+          const messageData = { id: clientId, msg: input.value, timestamp: Date.now() };
           socket.emit('chat message', messageData);
           input.value = '';
         }
